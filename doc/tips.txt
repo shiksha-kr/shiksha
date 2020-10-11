@@ -1,0 +1,7 @@
+python -m manim my_circle.py MyCircle -pl
+ffmpeg -safe 0 -f concat -i in_files.txt -codec copy circular_motion.mp4
+#ffmpeg -i "circular_motion.mp4 " -i "circular_motion.mp3" -vcodec copy -acodec copy -map 0:0 -map 1:0 circular_motion_1.mp4
+ffmpeg -i "circular_motion.mp4 " -i "circular_motion.mp3" circular_motion_1.mp4
+
+#ffmpeg -i BlackScreen.mp4 -i ta_circle.mp3 -i hi_circle.mp3 -map 1 -map 2 -metadata:s:a:0 language=tam -metadata:s:a:1 language=hin circle.mp4
+ffmpeg -i BlackScreen.mp4 -i ta_circle.mp3 -i hi_circle.mp3 -i circle1.vtt -i circle2.vtt -map 1 -map 2 -metadata:s:a:0 language=tam -metadata:s:a:1 language=hin circle.mp4
